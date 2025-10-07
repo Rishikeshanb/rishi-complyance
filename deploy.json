@@ -1,0 +1,12 @@
+{
+  "name": "deploy",
+  "version": "1.0.0",
+  "scripts": {
+    "deploy:build": "cd client && npm install && npm run build",
+    "deploy:railway": "railway login && railway deploy",
+    "deploy:heroku": "git add . && git commit -m 'Deploy to Heroku' && git push heroku main",
+    "deploy:vercel": "cd client && npm run build && cd build && vercel --prod",
+    "start:production": "NODE_ENV=production node server.js",
+    "setup:full": "npm install && cd client && npm install && npm run build && cd .."
+  }
+}
